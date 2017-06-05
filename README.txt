@@ -5,8 +5,12 @@ Copyright INFOMRATION
 //  Expense Tracker
 //
 //  Created by Abhishek Dutta on 11/25/16.
-//  Copyright © 2016 ABHISHEK DUTTA. All rights reserved.
+//  Copyright Â© 2016 ABHISHEK DUTTA. All rights reserved.
 //
+
+DESCRIPTION
+===========
+It is a simple desktop application for tracking daily expenses built in Java using JSON framework. It allows addition/deletion/updation of monthly expenses, adding/removing members in a group.
 
 USAGE
 =======
