@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ExpenseTracker" default="execute" basedir=".">
+	<target name="targets">
+		<property name="sourceDir" value="src/com/domain/myapp" />
+		<property name="outputDir" value="output" />
+		<property name="libDir" value="lib" />
+		<property name="main-class" value="com.domain.myapp.Dashboard" />
+	</target>
+	<target name="clean" depends="targets">
+		<delete dir="${outputDir}" />
+	</target>
+	<target name="prepare" depends="clean">
+		<mkdir dir="${outputDir}" />
+	</target>
+	<target name="build" depends="prepare,targets">
+		<javac includeantruntime="true" srcdir="${sourceDir}" destdir="${outputDir}">
+			<classpath>
+				<path id="referid">
+					<fileset dir="${libDir}">
+						<include name="*" />
+					</fileset>
+				</path>
+			</classpath>
+		</javac>
+	</target>
+	<target name="execute" depends="build,targets">
+		<mkdir dir="ExecutableJar" />
+		<jar destfile="ExecutableJar/ExpenseTrackerAbhishekDutta.jar" basedir="${outputDir}">
+			<zipgroupfileset dir="lib" includes="*.jar" />
+			<manifest>
+				<attribute name="Main-Class" value="com.domain.myapp.Dashboard" />
+			</manifest>
+		</jar>
+	</target>
+
+</project>
